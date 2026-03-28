@@ -1,5 +1,5 @@
 # AutoInsight Project
-
+ 
 ## Description
 AutoInsight is a data analysis dashboard that loads customer data and displays it using a FastAPI backend and frontend interface.
 
