@@ -23,7 +23,7 @@ python -m uvicorn main:app --reload
 ### Frontend:
 Open index.html in browser
 
-## Author
+## Team Members
 1. Gourisha Gulghane
 2. Diya Nair
 3. Devyani Thengane
