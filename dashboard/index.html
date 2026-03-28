@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoInsight Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>AutoInsight Dashboard</h1>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search by name...">
+
+    <!-- Table -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Index</th>
+                <th onclick="sortTable(1)">First Name</th>
+                <th onclick="sortTable(2)">Last Name</th>
+                <th onclick="sortTable(3)">Country</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+<script src="script.js"></script>
+</body>
+</html>

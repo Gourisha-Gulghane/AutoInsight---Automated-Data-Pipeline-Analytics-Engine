@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AutoInsight - Customer Data</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { padding: 10px 20px; margin-bottom: 20px; cursor: pointer; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h2>Customer Data</h2>
+  <button id="loadDataBtn">Load Data</button>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will appear here -->
+    </tbody>
+  </table>
+
+  <script>
+    document.getElementById("loadDataBtn").addEventListener("click", function() {
+      fetch("http://127.0.0.1:8000/data")
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector("#dataTable tbody");
+          tbody.innerHTML = ""; // clear table
+          data.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${row["Index"]}</td>
+              <td>${row["First Name"]}</td>
+              <td>${row["Last Name"]}</td>
+              <td>${row["Country"]}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(err => console.error("Data fetch failed!", err));
+    });
+  </script>
+</body>
+</html>
